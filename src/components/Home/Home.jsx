@@ -35,11 +35,6 @@ export default function Home() {
           <Button onClick={() => handleSubmit()} variant="contained" color="primary">Search</Button>
         </Grid>
         {movies.length>0 ? <Carousel movies={movies}/> : null}
-      {movies && movies.map(e =>
-        <Grid item xs={3} key={e.imdbID} >
-          <MovieCard movie={e} elevation={3} />
-        </Grid>
-      )}
       </Grid>
     );
 }
