@@ -1,0 +1,50 @@
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/*--- Title and Pagination ---*/
+.container-title-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/*--- Main container and arrows ---*/
+.movies-selected {
+    margin-bottom: 70px;
+}
+
+.movies-selected .main-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.movies-selected .main-container .right-arrow,
+.movies-selected .main-container .left-arrow {
+    position: absolute;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% -25%);
+    line-height: 40px;
+    width: 50px;
+    color: #fff;
+    z-index: 500;
+    transition: .2 ease;
+}
+
+.movies-selected .main-container .right-arrow {
+    right: 0;
+}
+
+.movies-selected .main-container .left-arrow {
+    left: 0;
+}
+
+.movies-selected .main-container .right-arrow:hover,
+.movies-selected .main-container .left-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
