@@ -1,5 +1,6 @@
 .container {
-    width: 90%;
+    width: 1250px;
+    height: 300px;
     margin: auto;
 }
 
@@ -8,6 +9,25 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+.container-title-pagination h3 {
+    color:#fff;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.container-title-pagination .pagination button {
+    background: #fff;
+    height: 15px;
+    width: 5px;
+    margin-right: 2px;
+    border: none;
+}
+
+.container-title-pagination .pagination button:hover,
+.container-title-pagination .pagination button.active {
+    background: #61dafb;
 }
 
 /*--- Main container and arrows ---*/
@@ -48,3 +68,35 @@
 .movies-selected .main-container .left-arrow:hover {
     background-color: rgba(0, 0, 0, 0.6);
 }
+
+/*--- Carousel  ---*/
+.movies-selected .container-carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.movies-selected .container-carousel .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 210px;
+}
+
+.movies-selected .container-carousel .carousel .movie{
+    min-width: 20%;
+    transition: .3s ease all;
+}
+
+.movies-selected .container-carousel .carousel .movie .hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.movies-selected .container-carousel .carousel .movie img {
+    width: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+/*--- Media Query  ---*/

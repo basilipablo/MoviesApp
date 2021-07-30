@@ -17,7 +17,7 @@ export default function Carousel(movies) {
             <div className='container-title-pagination'>
                 <Typography variant="h3">Your Movies</Typography>
                 <div className="pagination">
-                
+                    
                 </div>
             </div>
             <div className="main-container">
