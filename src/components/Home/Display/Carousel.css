@@ -1,9 +1,3 @@
-.container {
-    width: 1250px;
-    height: 300px;
-    margin: auto;
-}
-
 /*--- Title and Pagination ---*/
 .container-title-pagination {
     display: flex;
@@ -80,7 +74,7 @@
 .movies-selected .container-carousel .carousel {
     display: flex;
     flex-wrap: nowrap;
-    height: 210px;
+    height: 150px;
 }
 
 .movies-selected .container-carousel .carousel .movie{
@@ -88,7 +82,7 @@
     transition: .3s ease all;
 }
 
-.movies-selected .container-carousel .carousel .movie .hover {
+.movies-selected .container-carousel .carousel .movie:hover {
     transform: scale(1.2);
     transform-origin: center;
 }
@@ -97,6 +91,7 @@
     width: 100%;
     vertical-align: top;
     overflow: hidden;
+    margin-bottom: 2px;
 }
 
 /*--- Media Query  ---*/
