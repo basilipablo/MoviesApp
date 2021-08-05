@@ -1,6 +1,6 @@
 import React from 'react';
 //Utils, components and assets imports
-import './Carousel.css';
+import './CarouselFromLess.css';
 //Material-UI imports
 import { ArrowBackIos, ArrowForwardIos } from '@material-ui/icons';
 import { Grid, Button, Typography, Link } from '@material-ui/core';
@@ -17,7 +17,9 @@ export default function Carousel(movies) {
             <div className='container-title-pagination'>
                 <Typography variant="h3">Your Movies</Typography>
                 <div className="pagination">
-                    
+                    <Button></Button>
+                    <Button></Button>
+                    <Button></Button>
                 </div>
             </div>
             <div className="main-container">

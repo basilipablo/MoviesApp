@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-right: 5px;
 }
 
 .container-title-pagination h3 {
@@ -13,10 +14,10 @@
 
 .container-title-pagination .pagination button {
     background: #fff;
-    height: 15px;
-    width: 5px;
-    margin-right: 2px;
+    height: 10px;
+    width: 3px;
     border: none;
+    margin-right: 2px;
 }
 
 .container-title-pagination .pagination button:hover,
@@ -74,6 +75,7 @@
 .movies-selected .container-carousel .carousel {
     display: flex;
     flex-wrap: nowrap;
+    margin-left: 5px;
     height: 150px;
 }
 

@@ -1,0 +1,94 @@
+/*--- Variables ---*/
+@white: #fff;
+@cian: #61dafb;
+
+
+/*--- Title and Pagination ---*/
+.container-title-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    h3 {
+        color: @white;
+        font-size: 30px;
+        margin-left: 5px;
+    }
+    .pagination button {
+        background: @white;
+        height: 15px;
+        width: 5px;
+        margin-right: 2px;
+        border: none;
+    }
+    .pagination button:hover,
+    .pagination button.active{
+        background: @cian;
+    }
+}
+
+/*--- Main container and arrows ---*/
+.movies-selected {
+    margin-bottom: 70px;
+    .main-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        .right-arrow,
+        .left-arrow {
+            position: absolute;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.3);
+            font-size: 40px;
+            height: 50%;
+            top: calc(50% -25%);
+            line-height: 40px;
+            width: 50px;
+            color: @white;
+            z-index: 500;
+            transition: .2 ease;
+        }
+        .right-arrow {
+            right: 0;
+            :hover {
+               background-color: rgba(0, 0, 0, 0.6);
+            }
+        }
+        .left-arrow {
+            left: 0;
+            :hover {
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+}
+
+
+/*--- Carousel  ---*/
+.movies-selected .container-carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    .carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: 5px;
+        height: 150px;
+        .movie {
+            min-width: 20%;
+            transition: .3s ease all;
+            :hover {
+                transform: scale(1.2);
+                transform-origin: center;
+            }
+            img {
+                width: 100%;
+                vertical-align: top;
+                overflow: hidden;
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
+
+/*--- Media Query  ---*/

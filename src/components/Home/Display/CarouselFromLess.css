@@ -1,0 +1,86 @@
+/*--- Variables ---*/
+/*--- Title and Pagination ---*/
+.container-title-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.container-title-pagination h3 {
+  color: #fff;
+  font-size: 30px;
+  margin-left: 5px;
+}
+.container-title-pagination .pagination button {
+  background: #fff;
+  height: 15px;
+  width: 5px;
+  margin-right: 2px;
+  border: none;
+}
+.container-title-pagination .pagination button:hover,
+.container-title-pagination .pagination button.active {
+  background: #61dafb;
+}
+/*--- Main container and arrows ---*/
+.movies-selected {
+  margin-bottom: 70px;
+}
+.movies-selected .main-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.movies-selected .main-container .right-arrow,
+.movies-selected .main-container .left-arrow {
+  position: absolute;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 50%;
+  top: calc(50% -25%);
+  line-height: 40px;
+  width: 50px;
+  color: #fff;
+  z-index: 500;
+  transition: 0.2 ease;
+}
+.movies-selected .main-container .right-arrow {
+  right: 0;
+}
+.movies-selected .main-container .right-arrow :hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.movies-selected .main-container .left-arrow {
+  left: 0;
+}
+.movies-selected .main-container .left-arrow :hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+/*--- Carousel  ---*/
+.movies-selected .container-carousel {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.movies-selected .container-carousel .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 5px;
+  height: 150px;
+}
+.movies-selected .container-carousel .carousel .movie {
+  min-width: 20%;
+  transition: 0.3s ease all;
+}
+.movies-selected .container-carousel .carousel .movie :hover {
+  transform: scale(1.2);
+  transform-origin: center;
+}
+.movies-selected .container-carousel .carousel .movie img {
+  width: 100%;
+  vertical-align: top;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+/*--- Media Query  ---*/
