@@ -18,7 +18,7 @@ export default function Carousel(movies) {
             row.scrollLeft -= row.offsetWidth
         }
     }
-    console.log(arrMov)
+    //console.log(arrMov)
     const handleClickPagination = function (index) {
         const row = document.querySelector('.container-carousel');
         row.scrollLeft = index * row.offsetWidth;

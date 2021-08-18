@@ -7,7 +7,7 @@ import Carousel from './Display/Carousel'
 import useStyles from "./home";
 import { getMovies} from '../../actions/index';
 //Material UI imports
-import { Grid, TextField, Typography } from '@material-ui/core';
+import { Grid, TextField, Typography, Paper } from '@material-ui/core';
 
 
 export default function Home() {
@@ -22,7 +22,8 @@ export default function Home() {
   }
 
   return (
-      <Grid container spacing={2}>
+    <Paper className={classes.paperContainer}>
+    <Grid container spacing={2} >
         <Grid item xs={12} align='center'>
           <Typography variant="h2">Search Movie by Title</Typography>
         </Grid>
@@ -39,6 +40,7 @@ export default function Home() {
             </Grid>
           )}
         </Grid>
-      </Grid>
+    </Grid>
+    </Paper>
     );
 }
