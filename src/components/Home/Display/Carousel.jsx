@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //Utils, components and assets imports
 import './Carousel.css';
 import MovieCard from './MovieCard';
@@ -10,14 +10,22 @@ export default function Carousel(movies) {
     
     const arrMov = movies.movies
     const [modalState, setModalState] = useState(false);
-    const paginationNum = arrMov.splice(0, arrMov.length/5)
+    const [indexPag, setIndexPag] = useState(0);
+    const paginationNum = arrMov.splice(0, Math.ceil(arrMov.length/5))
     
     const handleClick = function(side){
         const row = document.querySelector('.container-carousel');
         if(side === 'right') {
-            row.scrollLeft += row.offsetWidth
+            row.scrollLeft += row.offsetWidth;
+            if(indexPag < paginationNum.length-1) 
+            {
+            document.querySelector('.pagination .active').classList.remove('active');
+            document.getElementById(indexPag+1).classList.add('active')
+            }
         } else {
-            row.scrollLeft -= row.offsetWidth
+            row.scrollLeft -= row.offsetWidth;
+            document.querySelector('.pagination .active').classList.remove('active');
+            document.getElementById(indexPag).classList.add('active')
         }
     }
 
@@ -26,19 +34,25 @@ export default function Carousel(movies) {
         row.scrollLeft = index * row.offsetWidth;
         document.querySelector('.pagination .active').classList.remove('active');
         document.getElementById(index).classList.add('active')
+        //setIndexPag(index);
+        console.log(arrMov)
     }
+
+    useEffect(() => {
+        setIndexPag(0)
+    }, [arrMov]);
     
     return (
         <Grid item xs={12} className='movies-selected container'>
             <div className='container-title-pagination'>
                 <Typography variant="h3">Your Movies</Typography>
                 <div className="pagination">
-                    {paginationNum.length > 0 && paginationNum.map((m, index) =>
-                        <Button id={index} onClick={() => handleClickPagination(index)} className={index < 1 ? 'active' : null}/>)}
+                    {paginationNum.length && paginationNum.map((m, index) =>
+                        <Button id={index} onClick={() => handleClickPagination(index)} className={index<1 ? 'active' : null}/>)}
                 </div>
             </div>
             <div className="main-container">
-                <Button id="left-arrow" className="left-arrow" onClick={() => handleClick('left')}><ArrowBackIos /></Button>
+                {paginationNum.length && paginationNum.length > 1 ? <Button id="left-arrow" className="left-arrow" onClick={() => handleClick('left')}><ArrowBackIos /></Button> : null}
                 <div className="container-carousel">
                     <div className="carousel">
                         {arrMov && arrMov.map( m =>
@@ -50,7 +64,7 @@ export default function Carousel(movies) {
                         )}
                     </div>
                 </div>
-                <Button id="right-arrow" className="right-arrow" onClick={() => handleClick('right')}><ArrowForwardIos /></Button>
+                {paginationNum.length && paginationNum.length > 1 ? <Button id="right-arrow" className="right-arrow" onClick={() => handleClick('right')}><ArrowForwardIos /></Button> : null}
             </div>
             <Modal
                 aria-labelledby="Movie details"
