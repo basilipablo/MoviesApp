@@ -5,7 +5,6 @@ import { getMovieDetail } from '../../actions/index';
 import './Movie.css';
 
 
-
 class Movie extends React.Component {
     // constructor() {
     //     super();

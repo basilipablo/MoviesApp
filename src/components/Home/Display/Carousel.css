@@ -96,4 +96,11 @@
     margin-bottom: 2px;
 }
 
-/*--- Media Query  ---*/
+/*--- Movie Detail  ---*/
+.modal {
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+    margin-left: 35%;
+    margin-top: 15%;
+}
